@@ -1,0 +1,191 @@
+module RedBomb(input logic frame_clk,
+				input logic shoot,
+				input logic Reset_h,
+				input logic [9:0] DrawX, DrawY,
+				input logic [9:0] Kid_position_X, Kid_position_Y,
+				input logic [9:0] Boss_position_X, Boss_position_Y,
+				output logic isRedBomb,
+				output logic hitBomb,
+				output logic NoBomb,
+				output logic [24:0] Bomb_address);
+	
+	logic [9:0] trigger_pos_X, trigger_pos_Y;
+	logic [9:0] Curr_position_X, Curr_position_Y;
+	logic [9:0] Next_position_X, Next_position_Y;
+	logic [9:0] Next_position_X_in, Next_position_Y_in;
+	
+	int position_counter, position_counter_in;
+	
+	logic hitBomb_in;
+	logic isPath;
+	int counter, counter_in;
+	logic enable, enable_in;
+	logic blink;
+	enum logic {start, blinking} curr_state, next_state;
+//	logic [24:0] Bomb_address_in;
+	
+	int hitX, hitY;
+	int diffX, diffY;
+	int diff;
+	
+	checkPath cp0(.*);
+	
+//	always_ff @ (posedge Clock_50) begin
+//		if(Reset_h) begin
+//			isRedBomb <= 1'b0;
+//			Bomb_address <= 25'd0;
+//		end
+//		else begin
+//			isRedBomb <= isRedBomb_in;
+//			Bomb_address <= Bomb_address_in;
+//		end
+//	end
+	
+	always_ff @ (posedge frame_clk) begin
+		if(Reset_h) begin
+			position_counter <= 0;
+			curr_state <= start;
+			counter <= 7'd0;
+			blink <= 1'b0;
+			enable <= 1'b0;
+			hitBomb <= 1'b0;
+//			Curr_position_X <= Kid_position_X;
+//			Curr_position_Y <= Kid_position_Y;
+//			Next_position_X <= Kid_position_X;
+//			Next_position_Y <= Kid_position_Y;
+			trigger_pos_X <= Kid_position_X;
+			trigger_pos_Y <= Kid_position_Y;
+		end
+		else begin
+			position_counter <= position_counter_in;
+			curr_state <= next_state;
+			counter <= counter_in;
+			blink <= ~blink;
+			enable <= enable_in;
+			hitBomb <= hitBomb_in;
+//			Curr_position_X <= Next_position_X;
+//			Curr_position_Y <= Next_position_Y;
+//			Next_position_X <= Next_position_X_in;
+//			Next_position_Y <= Next_position_Y_in;
+			if(shoot) begin
+				trigger_pos_X <= Kid_position_X;
+				trigger_pos_Y <= Kid_position_Y;
+			end
+		end
+	end
+	
+	always_comb begin
+		next_state = curr_state;
+		counter_in = counter;
+		enable_in = enable;
+//		Next_position_X_in = Next_position_X;
+//		Next_position_Y_in = Next_position_Y;
+		position_counter_in = position_counter;
+		NoBomb = 1'b1;
+		case(curr_state)
+			start: begin
+				if(shoot) begin
+					position_counter_in = 15;
+					next_state = blinking;
+					enable_in = 1'b1;
+					counter_in = 90;
+				end
+			end
+			
+			blinking: begin
+				NoBomb = 1'b0;
+				if(position_counter == 0) begin
+					position_counter_in = 15;
+//					Next_position_X_in = Kid_position_X;
+//					Next_position_Y_in = Kid_position_Y;
+				end
+				else begin
+					position_counter_in = position_counter - 1;
+				end
+				if(counter == 0) begin
+					next_state = start;
+					enable_in = 1'b0;
+				end
+				else begin
+					counter_in = counter - 1;
+				end
+				
+			end
+		endcase
+	end
+	
+	always_comb begin
+		hitBomb_in = 1'b0;
+		hitX = trigger_pos_X - Kid_position_X;
+		hitY = trigger_pos_Y - Kid_position_Y;
+		if(counter == 0 && curr_state == blinking && (hitX*hitX + hitY*hitY <= 1024)) begin
+			hitBomb_in = 1'b1;
+		end
+	end
+
+	always_comb begin
+		isRedBomb = isPath & blink & enable;
+//		isRedBomb_in = isPath & enable;
+		if(isRedBomb) begin
+			Bomb_address = 25'd1;
+		end
+		else begin
+			Bomb_address = 25'd0;
+		end
+	end
+	
+endmodule
+
+
+module checkPath(input logic [9:0] DrawX, DrawY,
+			input logic [9:0] Kid_position_X, Kid_position_Y,
+			input logic [9:0] Boss_position_X, Boss_position_Y,
+			output logic isPath);
+	int KD_X, KD_Y, DB_X, DB_Y;
+	int round;
+	
+	logic [9:0] MinX, MaxX, MinY, MaxY;
+	
+	always_comb begin
+		if(DrawX >= Kid_position_X + 10'd15) begin
+			KD_X = DrawX - Kid_position_X - 10'd15;
+		end
+		else begin
+			KD_X = Kid_position_X + 10'd15 - DrawX;
+		end
+		if(DrawY >= Kid_position_Y + 10'd15) begin
+			KD_Y = DrawY - Kid_position_Y - 10'd15;
+		end
+		else begin
+			KD_Y = Kid_position_Y + 10'd15 - DrawY;
+		end
+		
+		MinX = Boss_position_X;
+		MaxX = Kid_position_X + 10'd15;
+		DB_X = Kid_position_X + 10'd15 - Boss_position_X;
+		if(Boss_position_X >= Kid_position_X + 10'd15) begin
+			MinX = Kid_position_X + 10'd15;
+			MaxX = Boss_position_X;
+			DB_X = Boss_position_X - Kid_position_X - 10'd15;
+		end
+		
+		MinY = Boss_position_Y;
+		MaxY = Kid_position_Y + 10'd15;
+		DB_Y = Kid_position_Y + 10'd15 - Kid_position_Y;
+		if(Boss_position_Y >= Kid_position_Y + 10'd15) begin
+			MinY = Kid_position_Y + 10'd15;
+			MaxY = Boss_position_Y;
+			DB_Y = Boss_position_Y - Kid_position_Y - 10'd15;
+		end
+		round = KD_X*DB_Y - KD_Y*DB_X;
+		isPath = 1'b0;
+		if(DrawX >= MinX && DrawX <= MaxX && DrawY >= MinY && DrawY <= MaxY) begin
+			if((round >= -DB_X && round <= DB_X) || (round >= -DB_Y && round <= DB_Y)) begin
+				isPath = 1'b1;
+			end
+			else begin
+				isPath = 1'b0;
+			end
+		end
+	end
+endmodule

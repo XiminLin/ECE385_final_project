@@ -1,0 +1,267 @@
+
+State Machine - |Processor|record
+Name record.00 record.10 record.01 
+record.00 0 0 0 
+record.01 1 0 1 
+record.10 1 1 0 
+
+State Machine - |Processor|state
+Name state.professor state.final_report state.dead state.reset_second state.second state.reset_first state.first state.cover1 
+state.cover1 0 0 0 0 0 0 0 0 
+state.first 0 0 0 0 0 0 1 1 
+state.reset_first 0 0 0 0 0 1 0 1 
+state.second 0 0 0 0 1 0 0 1 
+state.reset_second 0 0 0 1 0 0 0 1 
+state.dead 0 0 1 0 0 0 0 1 
+state.final_report 0 1 0 0 0 0 0 1 
+state.professor 1 0 0 0 0 0 0 1 
+
+State Machine - |Processor|Flash_control:flash|curr_state
+Name curr_state.start curr_state.readSecond curr_state.readFirst 
+curr_state.start 0 0 0 
+curr_state.readFirst 1 0 1 
+curr_state.readSecond 1 1 0 
+
+State Machine - |Processor|stage_final:finals|state
+Name state.confirmed_2 state.confirmed state.F state.E state.D state.C state.B state.A 
+state.A 0 0 0 0 0 0 0 0 
+state.B 0 0 0 0 0 0 1 1 
+state.C 0 0 0 0 0 1 0 1 
+state.D 0 0 0 0 1 0 0 1 
+state.E 0 0 0 1 0 0 0 1 
+state.F 0 0 1 0 0 0 0 1 
+state.confirmed 0 1 0 0 0 0 0 1 
+state.confirmed_2 1 0 0 0 0 0 0 1 
+
+State Machine - |Processor|stage2:second_stage|allBall:allball0|curr_state
+Name curr_state.sendBall 
+curr_state.noBall 0 
+curr_state.sendBall 1 
+
+State Machine - |Processor|stage2:second_stage|allBall:allball0|ball:b4|curr_state
+Name curr_state.starting curr_state.dead curr_state.alive 
+curr_state.dead 0 0 0 
+curr_state.alive 0 1 1 
+curr_state.starting 1 1 0 
+
+State Machine - |Processor|stage2:second_stage|allBall:allball0|ball:b3|curr_state
+Name curr_state.starting curr_state.dead curr_state.alive 
+curr_state.dead 0 0 0 
+curr_state.alive 0 1 1 
+curr_state.starting 1 1 0 
+
+State Machine - |Processor|stage2:second_stage|allBall:allball0|ball:b2|curr_state
+Name curr_state.starting curr_state.dead curr_state.alive 
+curr_state.dead 0 0 0 
+curr_state.alive 0 1 1 
+curr_state.starting 1 1 0 
+
+State Machine - |Processor|stage2:second_stage|allBall:allball0|ball:b1|curr_state
+Name curr_state.starting curr_state.dead curr_state.alive 
+curr_state.dead 0 0 0 
+curr_state.alive 0 1 1 
+curr_state.starting 1 1 0 
+
+State Machine - |Processor|stage2:second_stage|allBall:allball0|ball:b0|curr_state
+Name curr_state.starting curr_state.dead curr_state.alive 
+curr_state.dead 0 0 0 
+curr_state.alive 0 1 1 
+curr_state.starting 1 1 0 
+
+State Machine - |Processor|stage2:second_stage|save:save0|state
+Name state.disappear state.red2 state.red1 state.ready 
+state.ready 0 0 0 0 
+state.red1 0 0 1 1 
+state.red2 0 1 0 1 
+state.disappear 1 0 0 1 
+
+State Machine - |Processor|stage2:second_stage|Boss:comb_172|curr_state
+Name curr_state.dead curr_state.wudi curr_state.fall_big curr_state.fall_hurt curr_state.fall curr_state.rush_back curr_state.rush curr_state.jump curr_state.sendBomb curr_state.prepareBomb curr_state.bigger curr_state.living 
+curr_state.living 0 0 0 0 0 0 0 0 0 0 0 0 
+curr_state.bigger 0 0 0 0 0 0 0 0 0 0 1 1 
+curr_state.prepareBomb 0 0 0 0 0 0 0 0 0 1 0 1 
+curr_state.sendBomb 0 0 0 0 0 0 0 0 1 0 0 1 
+curr_state.jump 0 0 0 0 0 0 0 1 0 0 0 1 
+curr_state.rush 0 0 0 0 0 0 1 0 0 0 0 1 
+curr_state.rush_back 0 0 0 0 0 1 0 0 0 0 0 1 
+curr_state.fall 0 0 0 0 1 0 0 0 0 0 0 1 
+curr_state.fall_hurt 0 0 0 1 0 0 0 0 0 0 0 1 
+curr_state.fall_big 0 0 1 0 0 0 0 0 0 0 0 1 
+curr_state.wudi 0 1 0 0 0 0 0 0 0 0 0 1 
+curr_state.dead 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Processor|stage2:second_stage|bullet_set:bullets|bullet:bullet_1|state
+Name state.flying 
+state.ready 0 
+state.flying 1 
+
+State Machine - |Processor|audio_interface:audio|state
+Name state.b_end state.b_stop1 state.b_stop0 state.d_ack state.d7 state.d6 state.d5 state.d4 state.d3 state.d2 state.d1 state.d0 state.a_ack state.a7 state.a6 state.a5 state.a4 state.a3 state.a2 state.a1 state.a0 state.b_ack state.b7 state.b6 state.b5 state.b4 state.b3 state.b2 state.b1 state.b0 state.start state.initialize 
+state.initialize 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.start 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.b0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.b1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.b2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.b3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.b4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.b5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.b6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.b7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.b_ack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.a0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.a1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.a2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.a3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.a4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.a5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.a6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.a7 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.a_ack 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.d0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.d1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.d2 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.d3 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.d4 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.d5 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.d6 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.d7 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.d_ack 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.b_stop0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.b_stop1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.b_end 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Processor|stage0:title|state
+Name state.exit_2 state.exit state.load_3 state.load_2 state.load state.start_2 state.start 
+state.start 0 0 0 0 0 0 0 
+state.start_2 0 0 0 0 0 1 1 
+state.load 0 0 0 0 1 0 1 
+state.load_2 0 0 0 1 0 0 1 
+state.load_3 0 0 1 0 0 0 1 
+state.exit 0 1 0 0 0 0 1 
+state.exit_2 1 0 0 0 0 0 1 
+
+State Machine - |Processor|stage1:first_stage|save:save0|state
+Name state.disappear state.red2 state.red1 state.ready 
+state.ready 0 0 0 0 
+state.red1 0 0 1 1 
+state.red2 0 1 0 1 
+state.disappear 1 0 0 1 
+
+State Machine - |Processor|stage1:first_stage|allApple:apples|state_a6
+Name state_a6.back_a6 state_a6.wait_a6 state_a6.fall_a6 state_a6.ready_a6 state_a6.finish_a6 
+state_a6.ready_a6 0 0 0 0 0 
+state_a6.fall_a6 0 0 1 1 0 
+state_a6.wait_a6 0 1 0 1 0 
+state_a6.back_a6 1 0 0 1 0 
+state_a6.finish_a6 0 0 0 1 1 
+
+State Machine - |Processor|stage1:first_stage|allApple:apples|state_apple2
+Name state_apple2.ready_a2 state_apple2.finish_a2 state_apple2.fall_a2 
+state_apple2.ready_a2 0 0 0 
+state_apple2.fall_a2 1 0 1 
+state_apple2.finish_a2 1 1 0 
+
+State Machine - |Processor|stage1:first_stage|allApple:apples|state_apple4
+Name state_apple4.oscillate2 state_apple4.oscillate1_2 state_apple4.oscillate1 state_apple4.ready_s4 state_apple4.oscillate2_2 
+state_apple4.ready_s4 0 0 0 0 0 
+state_apple4.oscillate1 0 0 1 1 0 
+state_apple4.oscillate1_2 0 1 0 1 0 
+state_apple4.oscillate2 1 0 0 1 0 
+state_apple4.oscillate2_2 0 0 0 1 1 
+
+State Machine - |Processor|stage1:first_stage|allApple:apples|state_apple3
+Name state_apple3.ready state_apple3.finish state_apple3.fall 
+state_apple3.ready 0 0 0 
+state_apple3.fall 1 0 1 
+state_apple3.finish 1 1 0 
+
+State Machine - |Processor|stage1:first_stage|allSpur:spurs|state_s11
+Name state_s11.forward_s11_fast state_s11.back_s11 state_s11.forward_s11 state_s11.reset_s11 state_s11.back_s11_fast 
+state_s11.reset_s11 0 0 0 0 0 
+state_s11.forward_s11 0 0 1 1 0 
+state_s11.back_s11 0 1 0 1 0 
+state_s11.forward_s11_fast 1 0 0 1 0 
+state_s11.back_s11_fast 0 0 0 1 1 
+
+State Machine - |Processor|stage1:first_stage|allSpur:spurs|state_s6
+Name state_s6.final_s6 state_s6.back_s6 state_s6.forward_s6 state_s6.upwait_s6 state_s6.up_s6 state_s6.ready_s6 
+state_s6.ready_s6 0 0 0 0 0 0 
+state_s6.up_s6 0 0 0 0 1 1 
+state_s6.upwait_s6 0 0 0 1 0 1 
+state_s6.forward_s6 0 0 1 0 0 1 
+state_s6.back_s6 0 1 0 0 0 1 
+state_s6.final_s6 1 0 0 0 0 1 
+
+State Machine - |Processor|stage1:first_stage|allSpur:spurs|state_s3
+Name state_s3.finish state_s3.back state_s3.wait3 state_s3.wait2 state_s3.wait1 state_s3.forward state_s3.ready 
+state_s3.ready 0 0 0 0 0 0 0 
+state_s3.forward 0 0 0 0 0 1 1 
+state_s3.wait1 0 0 0 0 1 0 1 
+state_s3.wait2 0 0 0 1 0 0 1 
+state_s3.wait3 0 0 1 0 0 0 1 
+state_s3.back 0 1 0 0 0 0 1 
+state_s3.finish 1 0 0 0 0 0 1 
+
+State Machine - |Processor|stage1:first_stage|bullet_set:bullets|bullet:bullet_1|state
+Name state.flying 
+state.ready 0 
+state.flying 1 
+
+State Machine - |Processor|stage1:first_stage|cat:cat1|curr_state
+Name curr_state.dead curr_state.rush curr_state.wait_3 curr_state.wait_2 curr_state.wait_1 curr_state.prepare 
+curr_state.prepare 0 0 0 0 0 0 
+curr_state.wait_1 0 0 0 0 1 1 
+curr_state.wait_2 0 0 0 1 0 1 
+curr_state.wait_3 0 0 1 0 0 1 
+curr_state.rush 0 1 0 0 0 1 
+curr_state.dead 1 0 0 0 0 1 
+
+State Machine - |Processor|print:printer|state
+Name state.reset state.normal state.initialization 
+state.reset 0 0 0 
+state.initialization 1 0 1 
+state.normal 1 1 0 
+
+State Machine - |Processor|SOC:system|SOC_sdram:sdram|m_next
+Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
+m_next.000000001 0 0 0 0 
+m_next.000001000 0 0 1 1 
+m_next.000010000 0 1 0 1 
+m_next.010000000 1 0 0 1 
+
+State Machine - |Processor|SOC:system|SOC_sdram:sdram|m_state
+Name m_state.100000000 m_state.010000000 m_state.001000000 m_state.000100000 m_state.000010000 m_state.000001000 m_state.000000100 m_state.000000010 m_state.000000001 
+m_state.000000001 0 0 0 0 0 0 0 0 0 
+m_state.000000010 0 0 0 0 0 0 0 1 1 
+m_state.000000100 0 0 0 0 0 0 1 0 1 
+m_state.000001000 0 0 0 0 0 1 0 0 1 
+m_state.000010000 0 0 0 0 1 0 0 0 1 
+m_state.000100000 0 0 0 1 0 0 0 0 1 
+m_state.001000000 0 0 1 0 0 0 0 0 1 
+m_state.010000000 0 1 0 0 0 0 0 0 1 
+m_state.100000000 1 0 0 0 0 0 0 0 1 
+
+State Machine - |Processor|SOC:system|SOC_sdram:sdram|i_next
+Name i_next.111 i_next.101 i_next.010 i_next.000 
+i_next.000 0 0 0 0 
+i_next.010 0 0 1 1 
+i_next.101 0 1 0 1 
+i_next.111 1 0 0 1 
+
+State Machine - |Processor|SOC:system|SOC_sdram:sdram|i_state
+Name i_state.111 i_state.101 i_state.011 i_state.010 i_state.001 i_state.000 
+i_state.000 0 0 0 0 0 0 
+i_state.001 0 0 0 0 1 1 
+i_state.010 0 0 0 1 0 1 
+i_state.011 0 0 1 0 0 1 
+i_state.101 0 1 0 0 0 1 
+i_state.111 1 0 0 0 0 1 
+
+State Machine - |Processor|SOC:system|SOC_nios2_qsys_0:nios2_qsys_0|SOC_nios2_qsys_0_nios2_oci:the_SOC_nios2_qsys_0_nios2_oci|SOC_nios2_qsys_0_jtag_debug_module_wrapper:the_SOC_nios2_qsys_0_jtag_debug_module_wrapper|SOC_nios2_qsys_0_jtag_debug_module_tck:the_SOC_nios2_qsys_0_jtag_debug_module_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

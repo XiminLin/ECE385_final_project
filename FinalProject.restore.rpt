@@ -1,0 +1,165 @@
+Restore Archived Project report for FinalProject
+Tue Dec 12 21:13:54 2017
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Tue Dec 12 21:13:54 2017 ;
+; Revision Name                   ; FinalProject                          ;
+; Top-level Entity Name           ; Processor                             ;
+; Family                          ; Cyclone IV E                          ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored 'C:/altera/15.0/FinalProject_v0.7.qar' into the 'C:/altera/15.0/FinalProject_v0.7_restored/' directory
+Info: Generated report 'FinalProject.restore.rpt'
+Info (23030): Evaluation of Tcl script c:/altera/15.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 358 megabytes
+    Info: Processing ended: Tue Dec 12 21:13:54 2017
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++-------------------------------------------------------------------------------------+
+; Files Restored                                                                      ;
++-------------------------------------------------------------------------------------+
+; File Name                                                                           ;
++-------------------------------------------------------------------------------------+
+; qar_info.json                                                                       ;
+; Boss.sv                                                                             ;
+; Character.sv                                                                        ;
+; ColorMapper.sv                                                                      ;
+; DoubleBuffer.sv                                                                     ;
+; FinalProject.qpf                                                                    ;
+; FinalProject.qsf                                                                    ;
+; Flash_control.sv                                                                    ;
+; HexDriver.sv                                                                        ;
+; Processor.sv                                                                        ;
+; RedBomb.sv                                                                          ;
+; SOC.qsys                                                                            ;
+; SOC.sopcinfo                                                                        ;
+; SOC/SOC.cmp                                                                         ;
+; SOC/synthesis/SOC.debuginfo                                                         ;
+; SOC/synthesis/SOC.qip                                                               ;
+; SOC/synthesis/SOC.regmap                                                            ;
+; SOC/synthesis/SOC.v                                                                 ;
+; SOC/synthesis/submodules/SOC_altpll_0.v                                             ;
+; SOC/synthesis/submodules/SOC_altpll_1.v                                             ;
+; SOC/synthesis/submodules/SOC_irq_mapper.sv                                          ;
+; SOC/synthesis/submodules/SOC_jtag_uart_0.v                                          ;
+; SOC/synthesis/submodules/SOC_keycode.v                                              ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0.v                                    ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_avalon_st_adapter.v                  ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_cmd_demux.sv                         ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_cmd_demux_001.sv                     ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_cmd_mux.sv                           ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_cmd_mux_001.sv                       ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_router.sv                            ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_router_001.sv                        ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_router_002.sv                        ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_router_003.sv                        ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_rsp_demux.sv                         ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_rsp_demux_001.sv                     ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_rsp_mux.sv                           ;
+; SOC/synthesis/submodules/SOC_mm_interconnect_0_rsp_mux_001.sv                       ;
+; SOC/synthesis/submodules/SOC_nios2_qsys_0.sdc                                       ;
+; SOC/synthesis/submodules/SOC_nios2_qsys_0.v                                         ;
+; SOC/synthesis/submodules/SOC_nios2_qsys_0_jtag_debug_module_sysclk.v                ;
+; SOC/synthesis/submodules/SOC_nios2_qsys_0_jtag_debug_module_tck.v                   ;
+; SOC/synthesis/submodules/SOC_nios2_qsys_0_jtag_debug_module_wrapper.v               ;
+; SOC/synthesis/submodules/SOC_nios2_qsys_0_oci_test_bench.v                          ;
+; SOC/synthesis/submodules/SOC_nios2_qsys_0_ociram_default_contents.mif               ;
+; SOC/synthesis/submodules/SOC_nios2_qsys_0_rf_ram_a.mif                              ;
+; SOC/synthesis/submodules/SOC_nios2_qsys_0_rf_ram_b.mif                              ;
+; SOC/synthesis/submodules/SOC_nios2_qsys_0_test_bench.v                              ;
+; SOC/synthesis/submodules/SOC_onchip_memory2_0.hex                                   ;
+; SOC/synthesis/submodules/SOC_onchip_memory2_0.v                                     ;
+; SOC/synthesis/submodules/SOC_otg_hpi_address.v                                      ;
+; SOC/synthesis/submodules/SOC_otg_hpi_cs.v                                           ;
+; SOC/synthesis/submodules/SOC_otg_hpi_data.v                                         ;
+; SOC/synthesis/submodules/SOC_sdram.v                                                ;
+; SOC/synthesis/submodules/SOC_sysid_qsys_0.v                                         ;
+; SOC/synthesis/submodules/altera_avalon_sc_fifo.v                                    ;
+; SOC/synthesis/submodules/altera_merlin_arbitrator.sv                                ;
+; SOC/synthesis/submodules/altera_merlin_burst_uncompressor.sv                        ;
+; SOC/synthesis/submodules/altera_merlin_master_agent.sv                              ;
+; SOC/synthesis/submodules/altera_merlin_master_translator.sv                         ;
+; SOC/synthesis/submodules/altera_merlin_slave_agent.sv                               ;
+; SOC/synthesis/submodules/altera_merlin_slave_translator.sv                          ;
+; SOC/synthesis/submodules/altera_reset_controller.sdc                                ;
+; SOC/synthesis/submodules/altera_reset_controller.v                                  ;
+; SOC/synthesis/submodules/altera_reset_synchronizer.v                                ;
+; SRAM_interface.sv                                                                   ;
+; ScrollScore.sv                                                                      ;
+; Spur.sv                                                                             ;
+; Synchronizers.sv                                                                    ;
+; VGA_controller.sv                                                                   ;
+; Wall.sv                                                                             ;
+; address_selector.sv                                                                 ;
+; allBall.sv                                                                          ;
+; apple.sv                                                                            ;
+; audio_interface.vhd                                                                 ;
+; bullet.sv                                                                           ;
+; cat.sv                                                                              ;
+; font_rom.sv                                                                         ;
+; getKeycode.sv                                                                       ;
+; hpi_io_intf.sv                                                                      ;
+; keyboard.sv                                                                         ;
+; print.sv                                                                            ;
+; print_score.sv                                                                      ;
+; print_test.stp                                                                      ;
+; save_point.sv                                                                       ;
+; sdram_buffer.sv                                                                     ;
+; stages.sv                                                                           ;
+; teleport.sv                                                                         ;
+; time_constraint_SRAM.sdc                                                            ;
+; time_constraint_kb.sdc                                                              ;
+; assignment_defaults.qdf                                                             ;
++-------------------------------------------------------------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+
